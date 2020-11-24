@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 
 // List of renderable "partials" / components
-const componentRegistry = {
+const dynamicRegistry = {
   SayHello: dynamic(() => import("../../components/SayHello"), {
     loading: () => <p>Loading...</p>
   })
@@ -12,7 +12,7 @@ const componentRegistry = {
 const RenderPartial = (props) => {
   // Props
   const { component, componentProps } = props;
-  const Component = componentRegistry[component];
+  const Component = dynamicRegistry[component];
 
   // -- Render --
 
