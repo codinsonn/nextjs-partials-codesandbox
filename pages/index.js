@@ -29,7 +29,7 @@ const IndexPage = (props) => {
 
 /* --- Initial Props ---------------------------------------------- */
 
-export const getServerSideProps = async ({ req }) => {
+export const getServerSideProps = async ({ req, resolvedUrl }) => {
   const component = "SayHello";
   const componentProps = JSON.stringify({ greeting: "World" });
   const url = "https://e1jxi.sse.codesandbox.io/";
@@ -38,7 +38,7 @@ export const getServerSideProps = async ({ req }) => {
     body: componentProps
   });
   const componentHTML = await res.text();
-  console.log({ url, componentHTML });
+  // console.log({ url: req.headers.host, componentHTML });
   return { props: { componentHTML } };
 };
 
