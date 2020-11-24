@@ -10,6 +10,19 @@ const IndexPage = (props) => {
         {/**/}
         <pre>{props.componentHTML}</pre>
       </div>
+      <h3>Related Links</h3>
+      <ul>
+        <li>
+          <a href="https://github.com/vercel/next.js/discussions/19493">
+            NextJS Discussion Thread
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/codinsonn/nextjs-partials-codesandbox">
+            Repository
+          </a>
+        </li>
+      </ul>
     </div>
   );
 };
@@ -19,7 +32,7 @@ const IndexPage = (props) => {
 export const getServerSideProps = async ({ req }) => {
   const component = "SayHello";
   const componentProps = JSON.stringify({ greeting: "World" });
-  const url = "https://ssiyd.sse.codesandbox.io/";
+  const url = "https://e1jxi.sse.codesandbox.io/";
   const res = await fetch(`${url}/render-partial/${component}`, {
     method: "POST",
     body: componentProps
