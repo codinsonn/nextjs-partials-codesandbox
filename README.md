@@ -1,4 +1,4 @@
-## Can NextJS be used for Partial Injections?
+## Can NextJS be used for (or handle) Partial Injections?
 
 Other ways I could phrase this question:
 
